@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c5x6nknt4of7b"]
+
+[ext_resource type="Shader" uid="uid://dh4n0gl4es5gb" path="res://assets/graphics/shaders/body_shader_material.gdshader" id="1_06dj5"]
+
+[resource]
+shader = ExtResource("1_06dj5")
+shader_parameter/body_color = Color(0.976, 0.757, 0.616, 1)
+shader_parameter/is_white = 1.0

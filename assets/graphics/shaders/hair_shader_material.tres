@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://7je8f460qdlc"]
+
+[ext_resource type="Shader" uid="uid://hh2gjycwgln" path="res://assets/graphics/shaders/hair_shader_material.gdshader" id="1_cege2"]
+
+[resource]
+shader = ExtResource("1_cege2")

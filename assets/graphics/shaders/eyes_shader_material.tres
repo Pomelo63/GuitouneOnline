@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bdak6e05f1nrt"]
+
+[ext_resource type="Shader" uid="uid://denk4ys2sc5ve" path="res://assets/graphics/shaders/eyes_shader_material.gdshader" id="1_v7va4"]
+
+[resource]
+shader = ExtResource("1_v7va4")
+shader_parameter/eyes_color = Color(0.976, 0.757, 0.616, 1)
+shader_parameter/is_blue = 1.0
