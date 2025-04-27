@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://dg02alrlcj7wp"]
+
+[ext_resource type="FontFile" uid="uid://bbm5qt73b5rx7" path="res://assets/fonts/FuturaStd-Medium.otf" id="1_0v4lt"]
+[ext_resource type="Script" uid="uid://bj487spmq8vsi" path="res://scripts/npc/dialog_box.gd" id="1_ddrs2"]
+[ext_resource type="FontFile" uid="uid://j8t0emqncb6s" path="res://assets/fonts/FuturaStd-Heavy.otf" id="1_dsgvl"]
+[ext_resource type="FontFile" uid="uid://chuh0jhngx0cx" path="res://assets/fonts/FuturaStd-Book.otf" id="1_ip1lr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jdfe"]
+bg_color = Color(0.184314, 0.219608, 0.270588, 0.843137)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="FontVariation" id="FontVariation_ip1lr"]
+base_font = ExtResource("1_dsgvl")
+
+[sub_resource type="FontVariation" id="FontVariation_0v4lt"]
+base_font = ExtResource("1_ip1lr")
+spacing_bottom = 10
+
+[node name="DialogBox" type="CanvasLayer"]
+script = ExtResource("1_ddrs2")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -198.0
+offset_right = 500.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4jdfe")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 1000.0
+offset_bottom = 180.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="NpcName" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.77756, 0.812769, 0.863727, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_ip1lr")
+theme_override_fonts/bold_italics_font = ExtResource("1_0v4lt")
+theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/bold_font_size = 23
+text = "Name :"
+fit_content = true
+scroll_active = false
+
+[node name="DialogueText" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = SubResource("FontVariation_0v4lt")
+theme_override_font_sizes/normal_font_size = 23
+text = "Salut, je m'appelle Crustion Laly, je suis un petit NPC qui ne sert à rien mais je vais te permettre de donner un style à tes boîtes de dialogue de NPC, c'est quand même bien pratique, non ? N'hésite pas à venir me parler si tu as besoin de renseignement sur ce jeu de merde... "
+fit_content = true
+scroll_active = false
+
+[node name="TextWriterTimer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="timeout" from="TextWriterTimer" to="." method="_on_text_writer_timer_timeout"]

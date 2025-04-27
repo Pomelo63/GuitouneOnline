@@ -1,0 +1,638 @@
+[gd_scene load_steps=27 format=3 uid="uid://ca3fsvwiaddug"]
+
+[ext_resource type="Script" uid="uid://6pbhp6ba2c01" path="res://scripts/character_creator.gd" id="1_jxkm3"]
+[ext_resource type="SpriteFrames" uid="uid://blgci2idcf3l4" path="res://assets/graphics/sprites_frame/body/male_animation.tres" id="2_jxkm3"]
+[ext_resource type="Material" uid="uid://c5x6nknt4of7b" path="res://assets/graphics/shaders/body_shader_material.tres" id="2_s2fyf"]
+[ext_resource type="Texture2D" uid="uid://y0il6ucc88vh" path="res://assets/graphics/background/Space.png" id="2_so581"]
+[ext_resource type="Material" uid="uid://bdak6e05f1nrt" path="res://assets/graphics/shaders/eyes_shader_material.tres" id="4_fag2i"]
+[ext_resource type="SpriteFrames" uid="uid://be0yocojgyxw1" path="res://assets/graphics/sprites_frame/clothing/male_0_animation.tres" id="4_wak5v"]
+[ext_resource type="SpriteFrames" uid="uid://byi6yhhmhnmej" path="res://assets/graphics/sprites_frame/eyes/eyes_animation.tres" id="5_1q3fu"]
+[ext_resource type="Material" uid="uid://7je8f460qdlc" path="res://assets/graphics/shaders/hair_shader_material.tres" id="5_dyb23"]
+[ext_resource type="SpriteFrames" uid="uid://cjpsk3kugtpu2" path="res://assets/graphics/sprites_frame/rear_hair/male_0_animation.tres" id="6_jxkm3"]
+[ext_resource type="SpriteFrames" uid="uid://df0b6wabjt66y" path="res://assets/graphics/sprites_frame/accessory/male_0_animation.tres" id="10_5em8t"]
+[ext_resource type="FontFile" uid="uid://bbm5qt73b5rx7" path="res://assets/fonts/FuturaStd-Medium.otf" id="11_jxkm3"]
+[ext_resource type="Texture2D" uid="uid://4h8ja8vucy7w" path="res://assets/graphics/icons/ui/arrow_left.png" id="12_ovn3k"]
+[ext_resource type="Texture2D" uid="uid://ts7cn7vhgt5g" path="res://assets/graphics/icons/ui/arrow_right.png" id="12_so581"]
+[ext_resource type="Texture2D" uid="uid://cmkke2un3jidn" path="res://assets/graphics/icons/class/icone_guerrier.png" id="12_wak5v"]
+[ext_resource type="AudioStream" uid="uid://bjsmmekgc101c" path="res://assets/audio/musics/Theme_Dietrich.ogg" id="15_5em8t"]
+[ext_resource type="AudioStream" uid="uid://bfvd0yis7wmhi" path="res://assets/audio/sounds/Decision2.ogg" id="16_hatlj"]
+[ext_resource type="AudioStream" uid="uid://d23mdlsdctyv5" path="res://assets/audio/sounds/Decision3.ogg" id="17_b7hpa"]
+
+[sub_resource type="GDScript" id="GDScript_1q3fu"]
+
+[sub_resource type="GDScript" id="GDScript_dyb23"]
+script/source = "extends Node2D
+"
+
+[sub_resource type="GDScript" id="GDScript_s2fyf"]
+script/source = "extends Node2D
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uq5va"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_xbt5v"]
+script/source = "extends Node2D
+"
+
+[sub_resource type="GDScript" id="GDScript_fag2i"]
+script/source = "extends Node2D
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_so581"]
+bg_color = Color(0.15984, 0.18568, 0.25336, 1)
+
+[sub_resource type="Theme" id="Theme_5em8t"]
+Button/styles/normal = SubResource("StyleBoxFlat_so581")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jxkm3"]
+bg_color = Color(0.0431373, 0.0470588, 0.054902, 0.756863)
+
+[node name="CharacterCreator" type="Node2D"]
+script = ExtResource("1_jxkm3")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_so581")
+stretch_mode = 1
+
+[node name="ColorRect3" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_so581")
+stretch_mode = 1
+
+[node name="Skeleton" type="Node2D" parent="."]
+position = Vector2(580, 332)
+scale = Vector2(2, 2)
+
+[node name="Body" type="AnimatedSprite2D" parent="Skeleton"]
+material = ExtResource("2_s2fyf")
+sprite_frames = ExtResource("2_jxkm3")
+animation = &"idle_down"
+script = SubResource("GDScript_1q3fu")
+
+[node name="Eyes" type="AnimatedSprite2D" parent="Skeleton"]
+material = ExtResource("4_fag2i")
+sprite_frames = ExtResource("5_1q3fu")
+animation = &"idle_down"
+
+[node name="Clothing" type="AnimatedSprite2D" parent="Skeleton"]
+sprite_frames = ExtResource("4_wak5v")
+animation = &"idle_down"
+script = SubResource("GDScript_dyb23")
+
+[node name="RearHair" type="AnimatedSprite2D" parent="Skeleton"]
+material = ExtResource("5_dyb23")
+sprite_frames = ExtResource("6_jxkm3")
+animation = &"idle_down"
+script = SubResource("GDScript_s2fyf")
+
+[node name="FrontHair" type="AnimatedSprite2D" parent="Skeleton"]
+material = ExtResource("5_dyb23")
+sprite_frames = SubResource("SpriteFrames_uq5va")
+animation = &"idle_down"
+script = SubResource("GDScript_xbt5v")
+
+[node name="Accessory" type="AnimatedSprite2D" parent="Skeleton"]
+sprite_frames = ExtResource("10_5em8t")
+animation = &"idle_down"
+script = SubResource("GDScript_fag2i")
+
+[node name="CreatorScreen" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CreatorScreen"]
+offset_left = 72.0
+offset_top = 40.0
+offset_right = 446.0
+offset_bottom = 574.0
+color = Color(0.137255, 0.176471, 0.294118, 0.984314)
+
+[node name="InputName" type="ColorRect" parent="CreatorScreen/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 10.0
+offset_right = 175.0
+offset_bottom = 65.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0)
+
+[node name="LineEdit" type="LineEdit" parent="CreatorScreen/ColorRect/InputName"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.0
+offset_right = 124.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme = SubResource("Theme_5em8t")
+theme_override_font_sizes/font_size = 20
+placeholder_text = "Nom du personnage"
+alignment = 1
+max_length = 20
+
+[node name="Body" type="ColorRect" parent="CreatorScreen/ColorRect"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 70.0
+offset_right = 360.0
+offset_bottom = 178.0
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="CreatorScreen/ColorRect/Body"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -82.0
+offset_right = 82.0
+offset_bottom = 49.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("11_jxkm3")
+theme_override_font_sizes/font_size = 22
+text = "Genre"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="CreatorScreen/ColorRect/Body"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -48.0
+offset_right = 97.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = -11
+theme_override_fonts/font = ExtResource("11_jxkm3")
+theme_override_font_sizes/font_size = 22
+text = "Couleur de la peau"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="GenderButton" type="Button" parent="CreatorScreen/ColorRect/Body"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_bottom = 50.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 25
+icon = ExtResource("12_so581")
+icon_alignment = 1
+
+[node name="GenderPrevious" type="Button" parent="CreatorScreen/ColorRect/Body"]
+layout_mode = 1
+offset_right = 50.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 25
+icon = ExtResource("12_ovn3k")
+icon_alignment = 1
+
+[node name="BodyColorButton" type="Button" parent="CreatorScreen/ColorRect/Body"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+icon = ExtResource("12_so581")
+icon_alignment = 1
+
+[node name="BodyColorPrevious" type="Button" parent="CreatorScreen/ColorRect/Body"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_right = 50.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+icon = ExtResource("12_ovn3k")
+icon_alignment = 1
+
+[node name="Hair" type="ColorRect" parent="CreatorScreen/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 244.0
+offset_right = 175.0
+offset_bottom = 402.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="CreatorScreen/ColorRect/Hair"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -83.0
+offset_top = 2.0
+offset_right = 83.0
+offset_bottom = 47.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = -11
+theme_override_fonts/font = ExtResource("11_jxkm3")
+theme_override_font_sizes/font_size = 22
+text = "Cheveux avant"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="CreatorScreen/ColorRect/Hair"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -23.0
+offset_right = 84.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = -11
+theme_override_fonts/font = ExtResource("11_jxkm3")
+theme_override_font_sizes/font_size = 22
+text = "Cheveux arrière"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="CreatorScreen/ColorRect/Hair"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -48.0
+offset_right = 85.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = -11
+theme_override_fonts/font = ExtResource("11_jxkm3")
+theme_override_font_sizes/font_size = 22
+text = "Couleur des cheveux"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrontHairCollectionButton" type="Button" parent="CreatorScreen/ColorRect/Hair"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_bottom = 50.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 25
+icon = ExtResource("12_so581")
+icon_alignment = 1
+
+[node name="FrontHairCollectionPrevious" type="Button" parent="CreatorScreen/ColorRect/Hair"]
+layout_mode = 1
+offset_right = 50.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 25
+icon = ExtResource("12_ovn3k")
+icon_alignment = 1
+
+[node name="RearHairCollectionButton2" type="Button" parent="CreatorScreen/ColorRect/Hair"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -25.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+icon = ExtResource("12_so581")
+icon_alignment = 1
+
+[node name="RearHairCollectionPrevious" type="Button" parent="CreatorScreen/ColorRect/Hair"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -25.0
+offset_right = 50.0
+offset_bottom = 25.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+icon = ExtResource("12_ovn3k")
+icon_alignment = 1
+
+[node name="HairColorButton" type="Button" parent="CreatorScreen/ColorRect/Hair"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+icon = ExtResource("12_so581")
+icon_alignment = 1
+
+[node name="HairColorPrevious" type="Button" parent="CreatorScreen/ColorRect/Hair"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_right = 50.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+icon = ExtResource("12_ovn3k")
+icon_alignment = 1
+
+[node name="Eyes" type="ColorRect" parent="CreatorScreen/ColorRect"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 187.0
+offset_right = 363.0
+offset_bottom = 239.0
+color = Color(1, 1, 1, 0)
+
+[node name="Label2" type="Label" parent="CreatorScreen/ColorRect/Eyes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -24.0
+offset_right = 91.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = -11
+theme_override_fonts/font = ExtResource("11_jxkm3")
+theme_override_font_sizes/font_size = 22
+text = "Couleur des yeux"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="EyesColorButton" type="Button" parent="CreatorScreen/ColorRect/Eyes"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -25.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+icon = ExtResource("12_so581")
+icon_alignment = 1
+
+[node name="EyesColorPrevious" type="Button" parent="CreatorScreen/ColorRect/Eyes"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -25.0
+offset_right = 50.0
+offset_bottom = 25.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+icon = ExtResource("12_ovn3k")
+icon_alignment = 1
+
+[node name="Class" type="ColorRect" parent="CreatorScreen/ColorRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 410.0
+offset_right = 362.0
+offset_bottom = 459.0
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="CreatorScreen/ColorRect/Class"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -21.5
+offset_right = 105.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = -11
+theme_override_fonts/font = ExtResource("11_jxkm3")
+theme_override_font_sizes/font_size = 22
+text = "Classe de départ"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ClassCollectionButton" type="Button" parent="CreatorScreen/ColorRect/Class"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -25.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+icon = ExtResource("12_so581")
+icon_alignment = 1
+
+[node name="ClassCollectionPrevious" type="Button" parent="CreatorScreen/ColorRect/Class"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -25.0
+offset_right = 50.0
+offset_bottom = 25.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+icon = ExtResource("12_ovn3k")
+icon_alignment = 1
+
+[node name="ConfirmButton" type="Button" parent="CreatorScreen/ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -107.0
+offset_top = -61.0
+offset_right = 107.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "CONFIRMER"
+
+[node name="SnackBar" type="Label" parent="CreatorScreen"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -59.0
+offset_right = 577.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.999952, 0.541279, 0.476805, 1)
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_jxkm3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 731.0
+offset_top = 40.0
+offset_right = 1081.0
+offset_bottom = 470.0
+color = Color(0.168627, 0.172549, 0.298039, 0.760784)
+
+[node name="ClassName" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_top = 92.0
+offset_right = 351.0
+offset_bottom = 130.0
+theme_override_fonts/font = ExtResource("11_jxkm3")
+theme_override_font_sizes/font_size = 30
+text = "Guerrier"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -29.5
+offset_top = 20.0
+offset_right = 29.5
+offset_bottom = 80.0
+grow_horizontal = 2
+texture = ExtResource("12_wak5v")
+
+[node name="ClassDescription" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 123.0
+offset_right = 327.0
+offset_bottom = 427.0
+theme_override_fonts/font = ExtResource("11_jxkm3")
+theme_override_font_sizes/font_size = 16
+text = "Les guerriers sont des combattants aguerris qui excellent dans le combat rapproché. Leur force brute et leur endurance leur permettent de résister aux pires blessures tout en infligeant des dégâts considérables. Armés d’épées, de haches ou de marteaux de guerre, ils se battent avec une intensité féroce, écrasant leurs adversaires sous des coups dévastateurs. Leur entraînement rigoureux leur confère une résistance exceptionnelle, leur permettant de rester debout même après des affrontements prolongés."
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_5em8t")
+autoplay = true
+parameters/looping = true
+
+[node name="ChoiceSelection" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_hatlj")
+volume_db = -10.0
+
+[node name="ValidationSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_b7hpa")
+
+[connection signal="text_changed" from="CreatorScreen/ColorRect/InputName/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/Body/GenderButton" to="." method="_on_gender_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/Body/GenderPrevious" to="." method="_on_gender_previous_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/Body/BodyColorButton" to="." method="_on_body_color_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/Body/BodyColorPrevious" to="." method="_on_body_color_previous_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/Hair/FrontHairCollectionButton" to="." method="_on_front_hair_collection_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/Hair/FrontHairCollectionPrevious" to="." method="_on_front_hair_collection_previous_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/Hair/RearHairCollectionButton2" to="." method="_on_rear_hair_collection_button_2_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/Hair/RearHairCollectionPrevious" to="." method="_on_rear_hair_collection_previous_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/Hair/HairColorButton" to="." method="_on_hair_color_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/Hair/HairColorPrevious" to="." method="_on_hair_color_previous_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/Eyes/EyesColorButton" to="." method="_on_eyes_color_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/Eyes/EyesColorPrevious" to="." method="_on_eyes_color_previous_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/Class/ClassCollectionButton" to="." method="_on_class_collection_button_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/Class/ClassCollectionPrevious" to="." method="_on_class_collection_previous_pressed"]
+[connection signal="pressed" from="CreatorScreen/ColorRect/ConfirmButton" to="." method="_on_confirm_button_pressed"]
