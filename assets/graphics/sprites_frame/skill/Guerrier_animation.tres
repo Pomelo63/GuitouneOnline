@@ -1,0 +1,151 @@
+[gd_resource type="SpriteFrames" load_steps=20 format=3 uid="uid://nvg7iwpgjt4v"]
+
+[ext_resource type="Texture2D" uid="uid://c507qqv7e6bmb" path="res://assets/graphics/sprites/skills/slash_attack_animation.png" id="1_2rnxu"]
+[ext_resource type="Texture2D" uid="uid://3isc1eyby4ue" path="res://assets/graphics/sprites/characters/male/front_hair/TV_FrontHair1_p01.png" id="2_4jw2b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rnxu"]
+atlas = ExtResource("1_2rnxu")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jw2b"]
+atlas = ExtResource("1_2rnxu")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdr4u"]
+atlas = ExtResource("1_2rnxu")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0e1u"]
+atlas = ExtResource("1_2rnxu")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4e8u"]
+atlas = ExtResource("1_2rnxu")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdtjr"]
+atlas = ExtResource("1_2rnxu")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tj1g1"]
+atlas = ExtResource("1_2rnxu")
+region = Rect2(192, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_melfp"]
+atlas = ExtResource("1_2rnxu")
+region = Rect2(288, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nctb"]
+atlas = ExtResource("1_2rnxu")
+region = Rect2(0, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hh8dk"]
+atlas = ExtResource("1_2rnxu")
+region = Rect2(96, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf3ty"]
+atlas = ExtResource("1_2rnxu")
+region = Rect2(192, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csct1"]
+atlas = ExtResource("1_2rnxu")
+region = Rect2(288, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25ef4"]
+atlas = ExtResource("1_2rnxu")
+region = Rect2(0, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeidm"]
+atlas = ExtResource("1_2rnxu")
+region = Rect2(96, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7cib"]
+atlas = ExtResource("1_2rnxu")
+region = Rect2(192, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du5y2"]
+atlas = ExtResource("1_2rnxu")
+region = Rect2(288, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk2xr"]
+atlas = ExtResource("2_4jw2b")
+region = Rect2(48, 144, 48, 48)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_2rnxu")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_4jw2b")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_cdr4u")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_r0e1u")
+}],
+"loop": false,
+"name": &"attack_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_r4e8u")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_vdtjr")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_tj1g1")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_melfp")
+}],
+"loop": false,
+"name": &"attack_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_5nctb")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_hh8dk")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_uf3ty")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_csct1")
+}],
+"loop": false,
+"name": &"attack_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_25ef4")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_aeidm")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_k7cib")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_du5y2")
+}],
+"loop": false,
+"name": &"attack_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk2xr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

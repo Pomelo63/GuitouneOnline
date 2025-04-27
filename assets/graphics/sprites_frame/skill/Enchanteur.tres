@@ -1,0 +1,151 @@
+[gd_resource type="SpriteFrames" load_steps=20 format=3 uid="uid://by5ljajd6lvy"]
+
+[ext_resource type="Texture2D" uid="uid://b52ovwfqtl8p6" path="res://assets/graphics/sprites/skills/wand_attack_animation.png" id="1_53cwa"]
+[ext_resource type="Texture2D" uid="uid://3isc1eyby4ue" path="res://assets/graphics/sprites/characters/male/front_hair/TV_FrontHair1_p01.png" id="2_w8knb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cken0"]
+atlas = ExtResource("1_53cwa")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rign4"]
+atlas = ExtResource("1_53cwa")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sfkx"]
+atlas = ExtResource("1_53cwa")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc5yi"]
+atlas = ExtResource("1_53cwa")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mpxs"]
+atlas = ExtResource("1_53cwa")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2muu"]
+atlas = ExtResource("1_53cwa")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3818"]
+atlas = ExtResource("1_53cwa")
+region = Rect2(192, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbetu"]
+atlas = ExtResource("1_53cwa")
+region = Rect2(288, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew146"]
+atlas = ExtResource("1_53cwa")
+region = Rect2(0, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0n2bb"]
+atlas = ExtResource("1_53cwa")
+region = Rect2(96, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw04w"]
+atlas = ExtResource("1_53cwa")
+region = Rect2(192, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nscvx"]
+atlas = ExtResource("1_53cwa")
+region = Rect2(288, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cfrq"]
+atlas = ExtResource("1_53cwa")
+region = Rect2(0, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw6j2"]
+atlas = ExtResource("1_53cwa")
+region = Rect2(96, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tobg5"]
+atlas = ExtResource("1_53cwa")
+region = Rect2(192, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8c64q"]
+atlas = ExtResource("1_53cwa")
+region = Rect2(288, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsd1u"]
+atlas = ExtResource("2_w8knb")
+region = Rect2(48, 144, 48, 48)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_cken0")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_rign4")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_2sfkx")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_nc5yi")
+}],
+"loop": false,
+"name": &"attack_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_7mpxs")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_c2muu")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_l3818")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_qbetu")
+}],
+"loop": false,
+"name": &"attack_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_ew146")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_0n2bb")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_dw04w")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_nscvx")
+}],
+"loop": false,
+"name": &"attack_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_2cfrq")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_nw6j2")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_tobg5")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_8c64q")
+}],
+"loop": false,
+"name": &"attack_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsd1u")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

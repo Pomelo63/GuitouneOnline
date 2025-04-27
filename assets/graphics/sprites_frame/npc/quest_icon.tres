@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://duwm5s16ve54r"]
+
+[ext_resource type="Texture2D" uid="uid://dbf1gcp4yqocp" path="res://assets/graphics/icons/baloon/Balloon.png" id="1_cxwgx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6ckw"]
+atlas = ExtResource("1_cxwgx")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e63ts"]
+atlas = ExtResource("1_cxwgx")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyskk"]
+atlas = ExtResource("1_cxwgx")
+region = Rect2(336, 0, 48, 48)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6ckw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e63ts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyskk")
+}],
+"loop": true,
+"name": &"quest_icon",
+"speed": 5.0
+}]
